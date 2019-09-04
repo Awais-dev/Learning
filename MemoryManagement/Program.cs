@@ -6,12 +6,7 @@ namespace MemoryManagement
     {
         static void Main(string[] args)
         {
-            Employee e;
-            Int32 year;
-            e = new Manager();
-            e = Employee.Lookup("Joe");
-            year = e.GetYearsEmployed();
-            e.GetProgressReport();
+         
         }
     }
 
