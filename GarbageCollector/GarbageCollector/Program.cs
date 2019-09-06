@@ -4,8 +4,12 @@ class Program
 {
     public static void Main(string[] args)
     {
+        Console.WriteLine($"Available memory before instance is destroyed: {GC.GetTotalMemory(true)}");
         Test();
+
         GC.Collect();
+        Console.WriteLine($"Available memory after instance is destroyed: { GC.GetTotalMemory(true)}");
+    
 
     }
 
