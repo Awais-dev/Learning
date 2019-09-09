@@ -7,13 +7,14 @@ namespace Properties
         static void Main(string[] args)
         {
             Player Tom = new Player();
-            Console.WriteLine($"Tom health is : {Tom.health}");
-            Tom.health -= 37;
+
             Tom.Level = 10;
-            Console.WriteLine($"Tom took damage by : {Tom.health}");
             Console.WriteLine($"Toms level is : Lv.{Tom.Level}");
-            Tom.health = 45;
-            Console.WriteLine($"Tom health is now : {Tom.health}");
+
+            Console.WriteLine($"Tom health is : {Tom.health}");
+
+            Tom.health -= 37;
+            Console.WriteLine($"Tom took damage by 37, Health = {Tom.health}");
 
         }
     }
@@ -21,6 +22,7 @@ namespace Properties
     class Player
     {
         public int Level { get; set; }
+
         private int _health = 100;
         public int health
         {
@@ -54,6 +56,4 @@ namespace Properties
     }
 }
 
-    //public string Make { get;} Read only property
-
-
+//public string Make { get;} Read only property
