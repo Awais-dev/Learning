@@ -22,6 +22,13 @@ namespace TryCatch
                 {
                     Console.WriteLine("Error Caught, Please enter a number\n");
                 }
+                finally
+                {
+                    if (input == true)
+                    {
+                        Console.WriteLine("App closed");
+                    }
+                }
             }
 
         }
