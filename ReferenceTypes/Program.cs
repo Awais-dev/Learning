@@ -5,28 +5,24 @@ namespace ReferenceTypes
     class Program
     {
         // Reference type (because of 'class')
-        class SomeRef { public Int32 x; public string name; }
+        class SomeRef { public Int32 age; public string name; }
 
         static void Main()
         {
             SomeRef r1 = new SomeRef(); // Allocated in heap
+            r1.name = "Simon";
+            r1.age = 28; 
 
-            r1.x = 5; // Pointer dereference
-            r1.name = "Reference";
+            ReferenceTypes(r1);
 
-            Console.WriteLine(r1.x); // Displays "5"
-            Console.WriteLine(r1.name); // also displays "Reference"
+            Console.WriteLine($"Name = {r1.name}\n" + $"Age = {r1.age}");
+       
+        }
 
-            SomeRef r2 = r1; // Copies reference (pointer) only
-
-            r1.x = 8; // Changes r1.x and r2.x
-            r1.name = "Reference Type";// Changes r1.x and r2.x
-
-            Console.WriteLine(r1.x); // Displays "8"
-            Console.WriteLine(r2.x); // Displays "8"
-            Console.WriteLine(r1.name); // Displays "Reference Type"
-            Console.WriteLine(r2.name); // Displays "Reference Type"
-
+        static void ReferenceTypes(SomeRef someRef)
+        {
+            someRef.name = "Awais";
+            someRef.age = 21;
         }
     }
 }

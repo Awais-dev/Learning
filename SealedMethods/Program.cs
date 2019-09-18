@@ -4,10 +4,8 @@ namespace SealedMethods
 {
     abstract class Greeting
     {
-        public void Hello()
-        {
-            Console.WriteLine("Hello");
-        }
+        public abstract void Hello();
+        
 
         public virtual void Bye()
         {
@@ -17,9 +15,9 @@ namespace SealedMethods
 
     sealed class Person : Greeting
     {
-        public void Test()
+        public override void Hello()
         {
-            Hello();
+            Console.WriteLine("Hello there");
         }
 
         public override void Bye()
@@ -32,7 +30,7 @@ namespace SealedMethods
     //class cat : Person
     //{
 
-      
+
     //}
 
     class Program
@@ -40,7 +38,7 @@ namespace SealedMethods
         static void Main(string[] args)
         {
             Person awais = new Person();
-            awais.Test();
+            awais.Hello();
             awais.Bye();
 
         }

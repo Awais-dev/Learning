@@ -5,27 +5,26 @@ namespace ValueTypes
     class Program
     {
         // Value type (because of 'struct')
-        public struct SomeVal { public Int32 x; public string name; }
+        public struct SomeVal { public Int32 Age; public string Name; }
         static void Main()
         {
 
             SomeVal v1 = new SomeVal(); // Allocated on stack
 
-            v1.x = 5; // Changed on stack
-            v1.name = "Value";
+            v1.Age = 28; // Changed on stack
+            v1.Name = "Simon";
 
-            Console.WriteLine(v1.x); // Also displays "5"
-            Console.WriteLine(v1.name); // also displays "Value"
+            ValueTypes(v1);
 
-            SomeVal v2 = v1; // Allocate on stack & copies members
+            Console.WriteLine($"Name = {v1.Name}\n" + $"Age = {v1.Age}");
 
-            v1.x = 9; // Changes v1.x, not v2.x
-            v1.name = "Value Type"; // Changes v1.x, not v2.x
+        }
 
-            Console.WriteLine(v1.x); // Displays "9"
-            Console.WriteLine(v2.x); // Displays "5"
-            Console.WriteLine(v1.name); // Displays "Value Type"
-            Console.WriteLine(v2.name); // Displays "Value"
+        static void ValueTypes(SomeVal someVal)
+        {
+            someVal.Age = 21;
+            someVal.Name = "Awais";
+
         }
     }
 }
